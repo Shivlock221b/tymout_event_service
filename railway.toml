@@ -1,7 +1,7 @@
 [build]
 builder = "nixpacks"
 providers = ["nodejs"]
-buildCommand = "npm install --production=false"
+buildCommand = "npm install --no-package-lock"
 
 [deploy]
 startCommand = "node server.js"
