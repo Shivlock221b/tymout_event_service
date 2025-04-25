@@ -1,13 +1,12 @@
 [build]
 builder = "nixpacks"
-buildCommand = "npm install"
+providers = ["nodejs"]
+buildCommand = "npm install --production=false"
 
 [deploy]
 startCommand = "node server.js"
 healthcheckPath = "/events/health"
 healthcheckTimeout = 100
-restartPolicyType = "on-failure"
-restartPolicyMaxRetries = 10
 
 [variables]
 NODE_ENV = "production"
